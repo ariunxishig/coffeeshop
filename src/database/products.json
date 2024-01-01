@@ -1,0 +1,246 @@
+{
+    "1 Coffee": {
+        "Americano": {
+            "prodID": 11,
+            "cost": 18000
+        },
+        "Latte": {
+            "prodID": 12,
+            "cost": 22000
+        },
+        "Cappuccino": {
+            "prodID": 13,
+            "cost": 22000
+        },
+        "Caramel": {
+            "prodID": 14,
+            "cost": 24000
+        },  
+        "Mocha": {
+            "prodID": 15,
+            "cost": 24000
+        }, 
+        "Coconut": {
+            "prodID": 16,
+            "cost": 24000
+        }, 
+        "Hazelnut": {
+            "prodID": 17,
+            "cost": 24000
+        }, 
+        "Vanilla": {
+            "prodID": 18,
+            "cost": 24000
+        }, 
+        "Espresso": {
+            "prodID": 19,
+            "cost": 15000
+        }, 
+        "Mongoliano": {
+            "prodID": 110,
+            "cost": 20000
+        } , 
+        "Flatwhite": {
+            "prodID": 111,
+            "cost": 20000
+        } , 
+        "Handdrip": {
+            "prodID": 112,
+            "cost": 30000
+        }  
+    },
+    "2 Frappucino": {
+        "Caramel frap": {
+            "prodID": 21,
+            "cost": 28000
+        }  , 
+        "Mocha frap": {
+            "prodID": 22,
+            "cost": 28000
+        } 
+    }, 
+    "3 Tea": {
+        "Black lemon tea": {
+            "prodID": 31,
+            "cost": 8000
+        }  ,
+        "Chainik tea": {
+            "prodID": 32,
+            "cost": 15000
+        }  , 
+        "Cup tea": {
+            "prodID": 33,
+            "cost": 8000
+        }  , 
+        "Us": {
+            "prodID": 34,
+            "cost": 3000
+        }  , 
+        "undaa": {
+            "prodID": 35,
+            "cost": 6000
+        } 
+    }, 
+    "4 Gr-coffee": {
+        "Blend-250": {
+            "prodID": 41,
+            "cost": 80000
+        }  ,
+        "Columbia-250": {
+            "prodID": 42,
+            "cost": 80000
+        }  , 
+        "India-250": {
+            "prodID": 43,
+            "cost": 80000
+        } ,
+        "Blend-500": {
+            "prodID": 44,
+            "cost": 150000
+        }  ,
+        "Columbia-500": {
+            "prodID": 45,
+            "cost": 150000
+        }  , 
+        "India-500": {
+            "prodID": 46,
+            "cost": 150000
+        } 
+    }, 
+    "5 Smoothie, Shake": {
+        "smooth Straw S": {
+            "prodID": 51,
+            "cost": 25000
+        }  ,
+        "smooth Straw L": {
+            "prodID": 517,
+            "cost": 30000
+        }  , 
+        "smooth Anar S": {
+            "prodID": 52,
+            "cost": 25000
+        }  ,
+        "smooth Anar L": {
+            "prodID": 527,
+            "cost": 30000
+        }  , 
+        "smooth Yogurt S": {
+            "prodID": 53,
+            "cost": 25000
+        },
+        "smooth Yogurt L": {
+            "prodID": 537,
+            "cost": 30000
+        } ,
+        "smooth Mint choco S": {
+            "prodID": 54,
+            "cost": 25000
+        } ,
+        "smooth Mint choco L": {
+            "prodID": 547,
+            "cost": 30000
+        } ,
+        "shake Straw S": {
+            "prodID": 55,
+            "cost": 25000
+        } ,
+        "shake Straw L": {
+            "prodID": 557,
+            "cost": 30000
+        } ,
+        "shake Banana S": {
+            "prodID": 56,
+            "cost": 25000
+        }  ,
+        "shake Banana L": {
+            "prodID": 567,
+            "cost": 30000
+        }  ,
+        "shake Choco S": {
+            "prodID": 57,
+            "cost": 25000
+        }  ,
+        "shake Choco L": {
+            "prodID": 577,
+            "cost": 30000
+        }  ,
+        "shake Milk S": {
+            "prodID": 58,
+            "cost": 25000
+        }  ,
+        "shake Milk L": {
+            "prodID": 587,
+            "cost": 30000
+        }  ,
+        "shake Oreo S": {
+            "prodID": 59,
+            "cost": 25000
+        } ,
+        "shake Oreo L": {
+            "prodID": 597,
+            "cost": 30000
+        } 
+    }, 
+    "6 Ade": {
+        "Lemon": {
+            "prodID": 61,
+            "cost": 15000
+        }  ,
+        "Anar": {
+            "prodID": 62,
+            "cost": 20000
+        }  , 
+        "Blue": {
+            "prodID": 63,
+            "cost": 20000
+        }  , 
+        "Cherry": {
+            "prodID": 64,
+            "cost": 20000
+        } 
+    },  
+    "7 NoCaffeine": {
+        "Green tea latte": {
+            "prodID": 71,
+            "cost": 24000
+        }  ,
+        "Hot choko": {
+            "prodID": 72,
+            "cost": 20000
+        }  , 
+        "Hot vanilla": {
+            "prodID": 73,
+            "cost": 20000
+        } 
+    }, 
+    "8 Deserts": {
+        "Donut": {
+            "prodID": 81,
+            "cost": 10000
+        }  ,
+        "Cheesecake": {
+            "prodID": 82,
+            "cost": 15000
+        }  , 
+        "Cookie": {
+            "prodID": 83,
+            "cost": 15000
+        }  , 
+        "Pechen": {
+            "prodID": 84,
+            "cost": 3000
+        }  , 
+        "Cup cake": {
+            "prodID": 85,
+            "cost": 5000
+        } , 
+        "Caranola": {
+            "prodID": 86,
+            "cost": 15000
+        }  , 
+        "Ayga": {
+            "prodID": 86,
+            "cost": 2000
+        } 
+    }
+}
