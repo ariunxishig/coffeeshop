@@ -17,15 +17,16 @@ export const incDecProds =(cmdNo, prods, title, indx)=>{
                         } else if(cmdNo===4){
                             product[2]++;
                         }
-                        const productCost = parseInt(product[0].split(':')[1])
-                        // product[3]  == category-n niit une tootsohdoo
+                        // const productCost = parseInt(product[0].split(':')[1])
+                        const productCost = product[5]
+                        
                         product[3] = productCost * product[2];
-                        if(product[4]>50 && product[4]<70){
-                            product[3] = ( productCost * product[1]) + ((productCost + 5000) * product[2]);
-                        }else if((product[4]>10 && product[4]<19) || (product[4]>70 && product[4]<80)){
-                            product[3] = ( productCost * product[1]) + ((productCost + 2000) * product[2]);
+                        if(product[4]>50 && product[4]<70){ //big smoothieshake 5k nemegdene product[6]
+                            product[3] = ( productCost * product[1]) + ((productCost + product[6]) * product[2]);
                         }
-                        //product[3] = ( productCost * product[1]) + ((productCost+2000)*product[2]);
+                        if((product[4]>10 && product[4]<19) || (product[4]>70 && product[4]<80)){ //cold coffee 2k nemegdene product[6]
+                            product[3] = ( productCost * product[1]) + ((productCost + product[7]) * product[2]);
+                        }
                     }
                     categTotal += product[3]
                 };

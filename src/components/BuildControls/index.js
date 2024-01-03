@@ -3,17 +3,23 @@ import css from "./style.module.css";
 import Grid from '@react-css/grid';
 
 const BuildControls = props => {
-  let val2 = 0;
   function getVal() {
     const val = document.getElementById('cash').value;
-    val2 = val - props.price;
     let inputc = document.getElementById('change')
-    inputc.value = val2;
+    inputc.value = val - props.price;
+  }
+  
+  function showAlert(value) {
+    alert('You have selected: ' + value);
+  }
+  function selectRadio() {
+    document.getElementById('contactChoice1').checked = false
+    document.getElementById('contactChoice2').checked = false
   }
   return (
     <div>
       <p className={css.BuildControls}>
-        Order cost : <strong>{props.price}</strong>
+        Order cost   : <strong>{props.price}</strong>
       </p>
       <Grid columns='5% 30% 5% 30% 10% 20%'>
         <label></label>
@@ -32,14 +38,19 @@ const BuildControls = props => {
         <input type="checkbox" id="contactChoice" name="Pos" value="Pos" />
       </Grid>
       <p></p>
-      <Grid autoFlow='column' className={css.BuildControls}> 
+      <Grid autoFlow='column' className={css.Slct}> 
         <Grid.Item justifySelf='end'>
-          Card:<input className={css.Radiobox} type="radio" id="contactChoice1" name="contact" value="Card" />
+          Card:<input type="radio" id="contactChoice1" name="contact" value="Card"/>
         </Grid.Item>
         <Grid.Item >
-          Account:<input className={css.Radiobox} type="radio" id="contactChoice2" name="contact" value="Transfer" />
+          Account:<input type="radio" id="contactChoice2" name="contact" value="Transfer"/>
         </Grid.Item>
-        <Grid.Item column='3 / 3' justifySelf='end' >
+        <Grid.Item>
+          <button onClick={()=>selectRadio()}>
+          <strong>reset</strong>
+          </button>
+        </Grid.Item>
+        <Grid.Item column='4 / 4' justifySelf='end' >
           <button
           onClick={props.showConfirmModal}
           disabled={props.disabled}

@@ -164,11 +164,12 @@ function Row({striped, row, glblState}) {
 
 const MenuList = props => {
   const [css] = useStyletron();
+  console.log(props);
   return (
     <div className={css({ height: "600px" })}>
       <StyledTable $gridTemplateColumns="auto auto auto auto">
         <StyledHeadCell>Product Category</StyledHeadCell>
-        <StyledHeadCell>Image</StyledHeadCell>
+        <StyledHeadCell>Reset</StyledHeadCell>
         <StyledHeadCell>Total Cost</StyledHeadCell>
         <StyledHeadCell>Ingredients</StyledHeadCell>
         { props.data && props.data.map((row, index) => {

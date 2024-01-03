@@ -16,10 +16,13 @@ const engine = new Styletron();
 const BurgerBuilder =(props) => {
   const [purchasing, setPurchasing] = useState(false);
   const [confirmOrder, setConfirmOrder] = useState(false);
-
   useEffect(()=>{
     props.loadProds();
   }, []);
+  
+  useEffect(()=>{
+    props.totalPrice === 0 ? setPurchasing(true) : setPurchasing(false);
+  });
 
   const continueOrder = () => {
     // console.log("continue daragdlaa...");
@@ -36,6 +39,7 @@ const BurgerBuilder =(props) => {
 
   const closeConfirmModal = () => {
     setConfirmOrder(false);
+    setPurchasing(false);
   };
   
   return (
@@ -48,6 +52,7 @@ const BurgerBuilder =(props) => {
           onCancel={closeConfirmModal}
           onContinue={continueOrder}
           price={props.totalPrice}
+          data = {props.data}
         />
       </Modal>
       <BuildControls

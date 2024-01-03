@@ -11,9 +11,9 @@ export const loadProds =()=>{
             for (const [key] of Object.entries(arr[0][1])) {
                 let PRODS = [];
                 for (const [k, v] of Object.entries(arr[0][1][key])) {
-                    let cost = Object.entries(v);
-                    if(cost[1][1]>500) continue;
-                    PRODS.push([`${k}: ${cost[0][1]}`, 0, 0, 0, cost[1][1]]);
+                    let value = Object.entries(v);
+                    if(value[1][1]>500) continue; //smoothie shake-g db deerh bugeer haruulahguin tuld
+                    PRODS.push([`${k}`, 0, 0, 0, value[1][1], value[0][1], 5000, 2000]);
                 }
                 PROD_ROW.push([key, 'running', 'details', 0, PRODS]);
             }
