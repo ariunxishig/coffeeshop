@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import MenuList from "../../components/MenuList";
 import BuildControls from "../../components/BuildControls";
@@ -13,73 +13,62 @@ import * as oneprodact from "../../redux/actions/action";
 import axios from "../../axios-orders";
 const engine = new Styletron();
 
-class BurgerBuilder extends Component {
-  state = {
-    purchasing: true,
-    confirmOrder: false,
-    data: []
+const BurgerBuilder =(props) => {
+  const [purchasing, setPurchasing] = useState(false);
+  const [confirmOrder, setConfirmOrder] = useState(false);
+
+  useEffect(()=>{
+    props.loadProds();
+  }, []);
+
+  const continueOrder = () => {
+    // console.log("continue daragdlaa...");
+    // const dbProds = require("../../database/orders.json");
+    // axios.post("orders.json", dbProds).then(response =>{
+    //     alert("Amjilttai hadgalaglaa")
+    // });
+  };
+  
+  const showConfirmModal = () => {
+    setConfirmOrder(true);
+    setPurchasing(true);
   };
 
-  continueOrder = () => {
-    console.log("continue daragdlaa...");
-    // const order ={
-    //   orts:this.state.ingredients,
-    //   dun: this.props.totalPrice,
-    // }
-    const dbProds = require("../../database/orders.json");
-    axios.post("orders.json", dbProds).then(response =>{
-        alert("Amjilttai hadgalaglaa")
-    });
+  const closeConfirmModal = () => {
+    setConfirmOrder(false);
   };
   
-  showConfirmModal = () => {
-    this.setState({ 
-      confirmOrder: true,
-      purchasing: true 
-    });
-  };
-
-  closeConfirmModal = () => {
-    this.setState({ confirmOrder: false });
-  };
-  
-  componentDidMount() {
-    this.props.loadProds();
-  };
-  
-  render() {
-    return (
-      <div>
-        <Modal
-          closeConfirmModal={this.closeConfirmModal}
-          show={this.state.confirmOrder}
-        >
-          <OrderSummary
-            onCancel={this.closeConfirmModal}
-            onContinue={this.continueOrder}
-            price={this.props.totalPrice}
-          />
-        </Modal>
-        <BuildControls
-          showConfirmModal={this.showConfirmModal}
-          disabled={!this.state.purchasing}
-          price={this.props.totalPrice}
+  return (
+    <div>
+      <Modal
+        closeConfirmModal={closeConfirmModal}
+        show={confirmOrder}
+      >
+        <OrderSummary
+          onCancel={closeConfirmModal}
+          onContinue={continueOrder}
+          price={props.totalPrice}
         />
-        {this.props.loading && <Spinner/>}
-        <StyletronProvider value={engine}>
-          <BaseProvider theme={LightTheme}>
-            <MenuList 
-              data={this.props.data}
-              orderNem={this.props.orderNem}
-              orderHas={this.props.orderHas}
-              orderAdd={this.props.orderAdd}
-              orderSub={this.props.orderSub}
-            />
-          </BaseProvider>
-        </StyletronProvider>
-      </div>
-    );
-  }
+      </Modal>
+      <BuildControls
+        showConfirmModal={showConfirmModal}
+        disabled={purchasing}
+        price={props.totalPrice}
+      />
+      {props.loading && <Spinner/>}
+      <StyletronProvider value={engine}>
+        <BaseProvider theme={LightTheme}>
+          <MenuList 
+            data={props.data}
+            orderNem={props.orderNem}
+            orderHas={props.orderHas}
+            orderAdd={props.orderAdd}
+            orderSub={props.orderSub}
+          />
+        </BaseProvider>
+      </StyletronProvider>
+    </div>
+  );
 }
 
 const mapStateToProps = state =>{

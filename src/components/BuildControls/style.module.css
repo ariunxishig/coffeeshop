@@ -1,21 +1,14 @@
 .BuildControls {
   width: 100%;
-  background-color: #cf8f2e;
+  background-color: #9c5f05;
   display: flex;
   flex-flow: column;
   align-items: center;
   box-shadow: 0 2px 1px #ccc;
   margin: auto;
-  padding: 10px 0; 
+  padding: 5px 0; 
 }
-.BuildInputs {
-  width: 75%;
-  display: inline-block;
-  align-items: center;
-  padding: -10px 0; 
-}
-
-.BuildControls p {
+.BuildControls  {
   font-size: 18px;
 }
 .Radiobox {
