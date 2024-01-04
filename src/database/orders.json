@@ -3,8 +3,8 @@
     "orderID": "",
     "prodID": "",
     "unit": "",
-    "unitprice": "",
     "price": "",
+    "unit x price": "",
     "totalprice": "",
     "isRegisteredStock":"",
     "date": ""

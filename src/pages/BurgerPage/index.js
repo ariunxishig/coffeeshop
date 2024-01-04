@@ -25,11 +25,58 @@ const BurgerBuilder =(props) => {
   });
 
   const continueOrder = () => {
-    // console.log("continue daragdlaa...");
-    // const dbProds = require("../../database/orders.json");
-    // axios.post("orders.json", dbProds).then(response =>{
-    //     alert("Amjilttai hadgalaglaa")
-    // });
+    console.log("continue daragdlaa...");
+    const currentDate = new Date();
+    const timestamp = currentDate.toLocaleTimeString()
+    const currentDayOfMonth = currentDate.getDate();
+    const currentMonth = currentDate.getMonth(); // Be careful! January is 0, not 1
+    const currentYear = currentDate.getFullYear();
+    const dateString = currentYear + "-" + (currentMonth + 1) + "-" + currentDayOfMonth;
+
+    let products= [];
+    if(props.data){
+      props.data.map((el, index)=> {
+        el[4].forEach(element => {
+          if(element[1] > 0 ){
+            let unitxCost = element[5] * element[1];
+            products.push({
+              "prodID": element[4],
+              "unit": element[1],
+              "price": element[5],
+              "unit x price": unitxCost
+            });
+          }
+          if(element[2] > 0 ){
+            let unitCost = element[5]; //db deerh product une[5]
+            let unitxCost = unitCost * element[2];
+            let prodID = element[4];
+            if(element[4]>50 && element[4]<70){
+              unitCost = element[5] + element[6]; //big smoothieshake 5k nemegdene [6]
+              unitxCost = unitCost * element[2];
+              prodID = parseInt(String(element[4])+7);
+            } 
+            else if((element[4]>10 && element[4]<19) || (element[4]>70 && element[4]<80)){
+              unitCost = element[5] + element[7]; //cold coffee 2k nemegdene [7]
+              unitxCost = unitCost * element[2];
+            } 
+            products.push({
+              "prodID": prodID,
+              "unit": element[1],
+              "price": unitCost,
+              "unit x price": unitxCost});
+          }
+        })
+      }) 
+      
+      var key = dateString +" "+ timestamp + "|" + props.userId + "|" + 0;
+      const orders = {[key]: products}
+      console.log(orders);
+
+      axios.post("orders.json", orders).then(response =>{
+        setConfirmOrder(false);
+      });
+      
+    }
   };
   
   const showConfirmModal = () => {
@@ -80,7 +127,8 @@ const mapStateToProps = state =>{
   return {
     data : state.prodReducer.data,
     loading: state.prodReducer.loading,
-    totalPrice : state.prodReducer.totalPrice
+    totalPrice : state.prodReducer.totalPrice,
+    userId: state.signupReducer.userId
   }
 }
 
