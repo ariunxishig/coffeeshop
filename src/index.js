@@ -3,13 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./pages/App";
 import * as serviceWorker from "./serviceWorker";
-// import {createStore} from "redux";
 import { legacy_createStore as createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
-import reducer from "./redux/reducers/reducer";
 import prodReducer from "./redux/reducers/prodReducer";
 import signupReducer from "./redux/reducers/signupLoginReducer";
+import orderReducer from "./redux/reducers/orderReducer";
 import { BrowserRouter} from 'react-router-dom';
 
 const loggerMiddlaware = store => {
@@ -27,9 +26,9 @@ const loggerMiddlaware = store => {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducers = combineReducers({
-    reducer,
     prodReducer,
-    signupReducer
+    signupReducer,
+    orderReducer,
 })
 const middlewares =[thunk];
 const store = createStore(reducers, applyMiddleware(...middlewares));

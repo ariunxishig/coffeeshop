@@ -6,10 +6,7 @@ import css from "./style.module.css";
 import Toolbar from "../../components/Toolbar";
 import BurgerPage from "../BurgerPage";
 import SideBar from "../../components/SideBar";
-import OrderPage from "../OrderPage";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-//import ShippingPage from "../ShippingPage";
-//import Burger from "../../components/Burger";
+import { Route, Switch } from "react-router-dom";
 import LoginPage from "../LoginPage";
 import SignupPage from "../SignupPage";
 import Logout from "../../components/Logout";
@@ -31,7 +28,7 @@ class App extends Component {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
     const expireDate = new Date(localStorage.getItem("expireDate"));
-    const refreshToken = localStorage.getItem("refreshToken");
+    // const refreshToken = localStorage.getItem("refreshToken");
 
     if (token) {
       if (expireDate > new Date()) {
@@ -61,11 +58,11 @@ class App extends Component {
         />
 
         <main className={css.Content}>
-          {this.props.userId ? (
+        <Route path="/" component={BurgerPage} /> 
+        {/* deedh muriig ustgeed doothig uncomment hiih */}
+          {/* {this.props.userId ? (
             <Switch>
               <Route path="/logout" component={Logout} />
-              <Route path="/orders" component={OrderPage} />
-              {/* <Route path="/ship" component={ShippingPage} /> */}
               <Route path="/" component={BurgerPage} />
             </Switch>
           ) : (
@@ -74,7 +71,7 @@ class App extends Component {
               <Route path="/login" component={LoginPage} />
               <Redirect to="/login" />
             </Switch>
-          )}
+          )} */}
         </main>
       </div>
     );

@@ -2,7 +2,6 @@
   "name": "burger",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ariunxishig.github.io/coffeeshop",
   "dependencies": {
     "@react-css/grid": "^2.2.0",
     "@testing-library/jest-dom": "^4.2.4",

@@ -34,10 +34,10 @@ function Tasks(props) {
     <div
       className={css({
         gridColumn: "span 4",
-        padding: "12px 24px"
+        padding: "12px 4px"
       })}
     >
-      <StyledTable $gridTemplateColumns="min-content fit-content(30%) fit-content(30%) max-content">
+      <StyledTable $gridTemplateColumns="min-content fit-content(10%) fit-content(10%) max-content">
         <StyledHeadCell $sticky={false}>Products</StyledHeadCell>
         <StyledHeadCell $sticky={false}>{coltitle1}</StyledHeadCell> 
         <StyledHeadCell $sticky={false}>{coltitle2}</StyledHeadCell>
@@ -49,17 +49,17 @@ function Tasks(props) {
               {!twoColTitles.includes(title) ? 
                 <StyledBodyCell>
                   <Button className={mycss.notification} 
-                    size="compact" 
-                    kind="minimal" 
-                    shape="square"
+                    size="mini" 
+                    kind="tertiary" 
+                    shape="pill"
                     onClick={() => props.glblState.orderHas(1, props.glblState, title, index)}                        
                   ><span>-</span>
                   </Button>
                   &nbsp;&nbsp;
                   <Button className={mycss.notification} 
-                    size="compact" 
+                    size="mini" 
                     kind="minimal" 
-                    shape="square" 
+                    shape="pill" 
                     onClick={() => props.glblState.orderNem(2, props.glblState, title, index)}
                   ><span>+</span>
                   <span className={mycss.badge}>{task[1]}</span>
@@ -70,17 +70,17 @@ function Tasks(props) {
               }
               <StyledBodyCell>
                 <Button className={mycss.notification} 
-                  size="compact"
+                  size="mini"
                   kind="minimal"
-                  shape="square"
+                  shape="pill"
                   onClick={() => props.glblState.orderSub(3, props.glblState, title, index)}
                 ><span>-</span>
                 </Button>
                 &nbsp;&nbsp;
                 <Button className={mycss.notification}
-                  size="compact"
+                  size="mini"
                   kind="minimal"
-                  shape="square"
+                  shape="pill"
                   onClick={() => props.glblState.orderAdd(4, props.glblState, title, index)}
                 >
                   <span>+</span>
@@ -164,7 +164,6 @@ function Row({striped, row, glblState}) {
 
 const MenuList = props => {
   const [css] = useStyletron();
-  console.log(props);
   return (
     <div className={css({ height: "600px" })}>
       <StyledTable $gridTemplateColumns="auto auto auto auto">

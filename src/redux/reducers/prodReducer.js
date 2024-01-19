@@ -20,13 +20,14 @@ const reducer = (state=initialState, action)=>{
         return {
             ...state,
             loading: false,
-            data:action.prods
+            totalPrice: 0,
+            data: action.prods
         }
     } else if(action.type ==="LOAD_PRODS_ERROR"){
         return {
             ...state,
             loading: false,
-            error:action.error
+            error: action.error
         }
     } else if(action.type==="PRODS_INC_DEC"){
         return{

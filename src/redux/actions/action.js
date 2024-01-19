@@ -19,7 +19,6 @@ export const incDecProds =(cmdNo, prods, title, indx)=>{
                         }
                         // const productCost = parseInt(product[0].split(':')[1])
                         const productCost = product[5]
-                        
                         product[3] = productCost * product[2];
                         if(product[4]>50 && product[4]<70){ //big smoothieshake 5k nemegdene product[6]
                             product[3] = ( productCost * product[1]) + ((productCost + product[6]) * product[2]);
@@ -53,3 +52,10 @@ export const calculateTotal = totalPrice =>{
         prods: totalPrice
     }
 };
+
+export const orderSave = orders =>{
+    return {
+        type:"LOAD_ORDERS_START",
+        prods: orders
+    }
+}
